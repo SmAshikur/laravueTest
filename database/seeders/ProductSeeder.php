@@ -17,12 +17,12 @@ class ProductSeeder extends Seeder
         Product::create([
             'name' => 'Test User',
             'image' => '/placeholder.png',
-            'user_id' => 1,
+            // 'user_id' => 1,
         ]);
         Product::create([
             'name' => 'Test Product',
             'image' => '/placeholder.png',
-            'user_id' => 1,
+            // 'user_id' => 1,
         ]);
 
     }

@@ -8,11 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    // Mass assignment protection
     protected $guarded = [];
-    public function category(){
-        return $this->belongsToMany(Category::class, 'category_products', 'product_id','category_id');
+
+    // Define the relationship between Product and Category
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'category_products'); // Define the pivot table here
     }
-    public function feature(){
+
+    // Define the relationship between Product and Feature
+    public function feature()
+    {
         return $this->hasMany(Feature::class);
     }
 }
+
